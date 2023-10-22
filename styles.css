@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*font-family: "zebrawood-std-fill", sans-serif;*/
+    scroll-behavior: smooth;
+}
+.links{
+    font-family: "century-gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.logo{
+    font-family: "zebrawood-std-fill", sans-serif;
+}
+
+/* SECTION STYLES START */
+#home{
+    display: block;
+    background: rgb(0, 0, 0);
+    background-image: url(slide_images/main_town.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+}
+#about{
+    background: #000;
+    background-image: url(slide_images/blurredback.jpg);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-template-areas: "a b";
+    margin: 0 auto;
+    place-items: center center;
+}
+#photos_slide{
+    background-color: #000;
+    background-image: url(slide_images/blurredresized_prosp.jpg);
+    height: 100vh;
+    text-align: center;
+    display: block;
+}
+
+/* SECTION STYLES END */
+
+li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: orange 
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.download_btn{
+    background-color: red;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2s ease;
+}
+.download_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.download_btn:active {
+    scale: 0.95;
+}
+
+/* Dropdown Menu */
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .download_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown_menu.open{
+    height: 240px;
+}
+
+/* text styles */
+h1{
+    font-family: "zebrawood-std-fill", sans-serif;
+    color: #fff;
+}
+p {
+    font-family: "century-gothic", sans-serif;
+    font-style: normal;
+    color: #fff;
+}
+
+.home_title{
+    display: flex;
+    height: 96%;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 2px 2px #000;
+}
+
+
+/* IMAGES STYLES START*/
+.swell {
+    height: 75%;
+    width: 75%;
+
+}
+
+/* SLIDE START */
+.bx-wrapper{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    top: 5em;
+}
+
+@keyframes fadeInUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  footer {
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    place-items: center center;
+  }
+  
+  .footer-text{
+    color: #000;
+    text-align: center;
+  }
+
+  .fadeInUp-animation {
+    animation: 1.5s fadeInUp;
+  }
+
+/* Responsive Design */
+@media(max-width: 992px){
+    .navbar .links, 
+    .navbar .download_btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+    .bx-wrapper {
+        top: 20em;
+    }
+
+}
+
+@media(max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
